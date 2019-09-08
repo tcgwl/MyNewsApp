@@ -21,9 +21,14 @@
 		DE2E8CDA2320F80300102219 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE2E8CD92320F80300102219 /* icon.bundle */; };
 		DE2E8CDD2320FEAA00102219 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2E8CDC2320FEAA00102219 /* GTListItem.m */; };
 		DE9FEC192321051B0073AFDC /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9FEC182321051B0073AFDC /* GTNormalTableViewCell.m */; };
+		EDF3DFAD2323555D0068B441 /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3DFAC2323555D0068B441 /* GTListLoader.m */; };
+		F236C82173C103CBC16793BA /* libPods-MyNewsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57696994E2A5718B639B429C /* Pods-MyNewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewsApp.release.xcconfig"; path = "Target Support Files/Pods-MyNewsApp/Pods-MyNewsApp.release.xcconfig"; sourceTree = "<group>"; };
+		BDF9EAE7B349111DBA929285 /* Pods-MyNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewsApp.debug.xcconfig"; path = "Target Support Files/Pods-MyNewsApp/Pods-MyNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyNewsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1BB6952322451800A7D0AD /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		DE1BB6962322451800A7D0AD /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		DE1BB698232259B100A7D0AD /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
@@ -50,6 +55,8 @@
 		DE2E8CDC2320FEAA00102219 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
 		DE9FEC172321051B0073AFDC /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		DE9FEC182321051B0073AFDC /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
+		EDF3DFAB2323555D0068B441 /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
+		EDF3DFAC2323555D0068B441 /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +64,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F236C82173C103CBC16793BA /* libPods-MyNewsApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25FF061FC154BEEA76B1D8E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDF9EAE7B349111DBA929285 /* Pods-MyNewsApp.debug.xcconfig */,
+				57696994E2A5718B639B429C /* Pods-MyNewsApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD7C2FB7608E9B9D9A5CEF28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE2E8CAB2320EC7E00102219 = {
 			isa = PBXGroup;
 			children = (
 				DE2E8CB62320EC7E00102219 /* MyNewsApp */,
 				DE2E8CB52320EC7E00102219 /* Products */,
+				25FF061FC154BEEA76B1D8E7 /* Pods */,
+				CD7C2FB7608E9B9D9A5CEF28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +110,10 @@
 		DE2E8CB62320EC7E00102219 /* MyNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				EDF3DFA7232354890068B441 /* MineController */,
+				EDF3DFA6232354750068B441 /* RecommendController */,
+				EDF3DFA5232354650068B441 /* VideoController */,
+				EDF3DFA1232353D50068B441 /* NewsController */,
 				DE2E8CD92320F80300102219 /* icon.bundle */,
 				DE2E8CB72320EC7E00102219 /* AppDelegate.h */,
 				DE2E8CB82320EC7E00102219 /* AppDelegate.m */,
@@ -91,24 +123,102 @@
 				DE2E8CC22320EC8000102219 /* LaunchScreen.storyboard */,
 				DE2E8CC52320EC8000102219 /* Info.plist */,
 				DE2E8CC62320EC8000102219 /* main.m */,
-				DE2E8CCD2320F48E00102219 /* GTNewsViewController.h */,
-				DE2E8CCE2320F48E00102219 /* GTNewsViewController.m */,
-				DE2E8CD02320F4A900102219 /* GTVideoViewController.h */,
-				DE2E8CD12320F4A900102219 /* GTVideoViewController.m */,
-				DE2E8CD32320F4C300102219 /* GTRecommendViewController.h */,
-				DE2E8CD42320F4C300102219 /* GTRecommendViewController.m */,
-				DE2E8CD62320F4D300102219 /* GTMineViewController.h */,
-				DE2E8CD72320F4D300102219 /* GTMineViewController.m */,
-				DE2E8CDB2320FEAA00102219 /* GTListItem.h */,
-				DE2E8CDC2320FEAA00102219 /* GTListItem.m */,
-				DE9FEC172321051B0073AFDC /* GTNormalTableViewCell.h */,
-				DE9FEC182321051B0073AFDC /* GTNormalTableViewCell.m */,
-				DE1BB6952322451800A7D0AD /* GTDetailViewController.h */,
-				DE1BB6962322451800A7D0AD /* GTDetailViewController.m */,
-				DE1BB698232259B100A7D0AD /* GTDeleteCellView.h */,
-				DE1BB699232259B100A7D0AD /* GTDeleteCellView.m */,
 			);
 			path = MyNewsApp;
+			sourceTree = "<group>";
+		};
+		EDF3DFA1232353D50068B441 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3DFA42323540D0068B441 /* Model */,
+				EDF3DFA3232353FF0068B441 /* View */,
+				EDF3DFA2232353F30068B441 /* Controller */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		EDF3DFA2232353F30068B441 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE1BB6952322451800A7D0AD /* GTDetailViewController.h */,
+				DE1BB6962322451800A7D0AD /* GTDetailViewController.m */,
+				DE2E8CCD2320F48E00102219 /* GTNewsViewController.h */,
+				DE2E8CCE2320F48E00102219 /* GTNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EDF3DFA3232353FF0068B441 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE1BB698232259B100A7D0AD /* GTDeleteCellView.h */,
+				DE1BB699232259B100A7D0AD /* GTDeleteCellView.m */,
+				DE9FEC172321051B0073AFDC /* GTNormalTableViewCell.h */,
+				DE9FEC182321051B0073AFDC /* GTNormalTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDF3DFA42323540D0068B441 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE2E8CDB2320FEAA00102219 /* GTListItem.h */,
+				DE2E8CDC2320FEAA00102219 /* GTListItem.m */,
+				EDF3DFAB2323555D0068B441 /* GTListLoader.h */,
+				EDF3DFAC2323555D0068B441 /* GTListLoader.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDF3DFA5232354650068B441 /* VideoController */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3DFA82323549D0068B441 /* Controller */,
+			);
+			path = VideoController;
+			sourceTree = "<group>";
+		};
+		EDF3DFA6232354750068B441 /* RecommendController */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3DFA9232354AB0068B441 /* Controller */,
+			);
+			path = RecommendController;
+			sourceTree = "<group>";
+		};
+		EDF3DFA7232354890068B441 /* MineController */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3DFAA232354B60068B441 /* Controller */,
+			);
+			path = MineController;
+			sourceTree = "<group>";
+		};
+		EDF3DFA82323549D0068B441 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE2E8CD02320F4A900102219 /* GTVideoViewController.h */,
+				DE2E8CD12320F4A900102219 /* GTVideoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EDF3DFA9232354AB0068B441 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE2E8CD32320F4C300102219 /* GTRecommendViewController.h */,
+				DE2E8CD42320F4C300102219 /* GTRecommendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EDF3DFAA232354B60068B441 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE2E8CD62320F4D300102219 /* GTMineViewController.h */,
+				DE2E8CD72320F4D300102219 /* GTMineViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE2E8CCA2320EC8000102219 /* Build configuration list for PBXNativeTarget "MyNewsApp" */;
 			buildPhases = (
+				3E014F3E640AFFA0C2579169 /* [CP] Check Pods Manifest.lock */,
 				DE2E8CB02320EC7E00102219 /* Sources */,
 				DE2E8CB12320EC7E00102219 /* Frameworks */,
 				DE2E8CB22320EC7E00102219 /* Resources */,
@@ -176,6 +287,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E014F3E640AFFA0C2579169 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyNewsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE2E8CB02320EC7E00102219 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -188,6 +324,7 @@
 				DE2E8CBC2320EC7E00102219 /* ViewController.m in Sources */,
 				DE2E8CDD2320FEAA00102219 /* GTListItem.m in Sources */,
 				DE1BB6972322451800A7D0AD /* GTDetailViewController.m in Sources */,
+				EDF3DFAD2323555D0068B441 /* GTListLoader.m in Sources */,
 				DE9FEC192321051B0073AFDC /* GTNormalTableViewCell.m in Sources */,
 				DE2E8CC72320EC8000102219 /* main.m in Sources */,
 				DE1BB69A232259B100A7D0AD /* GTDeleteCellView.m in Sources */,
@@ -323,6 +460,7 @@
 		};
 		DE2E8CCB2320EC8000102219 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF9EAE7B349111DBA929285 /* Pods-MyNewsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -339,6 +477,7 @@
 		};
 		DE2E8CCC2320EC8000102219 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57696994E2A5718B639B429C /* Pods-MyNewsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
