@@ -11,6 +11,7 @@
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 #import "GTMineViewController.h"
+#import "GTSplashView.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -24,17 +25,23 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
     GTNewsViewController *newsController = [[GTNewsViewController alloc] init];
     GTVideoViewController *videoController = [[GTVideoViewController alloc] init];
     GTRecommendViewController *recommendController = [[GTRecommendViewController alloc] init];
     GTMineViewController *mineController = [[GTMineViewController alloc] init];
+
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:@[newsController, videoController, recommendController, mineController]];
     tabBarController.delegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    [self.window addSubview:({
+        GTSplashView *splashView = [[GTSplashView alloc] initWithFrame:self.window.bounds];
+        splashView;
+    })];
     
     return YES;
 }
@@ -70,5 +77,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark -
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    NSLog(@"url=%@", url);
+    return YES;
+}
 
 @end

@@ -54,6 +54,11 @@
 
 - (void)viewClick {
     NSLog(@"---viewClick---");
+    NSURL *urlScheme = [NSURL URLWithString:@"docinbookipad://"];
+    __unused BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:urlScheme];
+    [[UIApplication sharedApplication] openURL:urlScheme options:nil completionHandler:^(BOOL success) {
+        NSLog(@"");
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

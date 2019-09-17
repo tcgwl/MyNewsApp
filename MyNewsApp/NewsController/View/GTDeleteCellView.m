@@ -7,6 +7,7 @@
 //
 
 #import "GTDeleteCellView.h"
+#import "GTScreen.h"
 
 @interface GTDeleteCellView ()
 
@@ -37,7 +38,7 @@
             [_deleteButton addTarget:self action:@selector(_clickButton) forControlEvents:UIControlEventTouchUpInside];
             _deleteButton.backgroundColor = [UIColor lightGrayColor];
             [_deleteButton setTitle:@"确认删除" forState:UIControlStateNormal];
-            _deleteButton.layer.cornerRadius = 25;
+            _deleteButton.layer.cornerRadius = UI(25);
             _deleteButton;
         })];
         
@@ -52,7 +53,7 @@
     
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     [UIView animateWithDuration:1.f delay:0.f usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.deleteButton.frame = CGRectMake((self.bounds.size.width - 100) / 2, (self.bounds.size.height - 50) / 2, 100, 50);
+        self.deleteButton.frame = UIRect((self.bounds.size.width - 100) / 2, (self.bounds.size.height - 50) / 2, 100, 50);
     } completion:^(BOOL finished) {
         //动画结束
     }];

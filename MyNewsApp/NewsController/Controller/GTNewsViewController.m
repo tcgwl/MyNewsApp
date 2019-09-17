@@ -8,10 +8,10 @@
 
 #import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
-#import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
 #import "GTListLoader.h"
 #import "GTListItem.h"
+#import "GTMediator.h"
 
 @interface GTNewsViewController () <UITableViewDataSource, UITableViewDelegate, GTNormalTableViewCellDelegate>
 
@@ -34,8 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -72,22 +72,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTListItem *listItem = [self.dataArray objectAtIndex:indexPath.row];
-    GTDetailViewController *detailController = [[GTDetailViewController alloc] initWithUrl:listItem.articleUrl];
-    detailController.title = [NSString stringWithFormat:@"%@", listItem.title];
+    
+    // 组件化三种方案
+    // 1. target action
+//    __kindof UIViewController *detailController = [GTMediator detailViewControllerWithUrl:listItem.articleUrl];
+//    detailController.title = listItem.title;
+//    [self.navigationController pushViewController:detailController animated:YES];
+    
+    // 2. url scheme
+//    [GTMediator openUrl:@"detail://" params:@{@"detailUrl":listItem.articleUrl, @"title":listItem.title, @"navController":self.navigationController}];
+    
+    // 3. protocol class
+    Class cls = [GTMediator classForProtocol:@protocol(GTDetailViewControllerProtocol)];
+    UIViewController *detailController = [[cls alloc] detailViewControllerWithUrl:listItem.articleUrl];
+    detailController.title = listItem.title;
     [self.navigationController pushViewController:detailController animated:YES];
+    
+    // 标记已读
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:listItem.uniqueKey];
 }
 
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
-//    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
-//    //deleteButton坐标系转换: cell转window
-//    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
-//
-//    __weak typeof(self) weakSelf = self;
-//    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        [strongSelf.dataArray removeLastObject];
-//        [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }];
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    // deleteButton坐标系转换: cell转window
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+
+    __weak typeof(self) weakSelf = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        NSIndexPath *deleteIndexPath = [strongSelf.tableView indexPathForCell:tableViewCell];
+        if (strongSelf.dataArray.count > deleteIndexPath.row) {
+            // 删除数据
+            NSMutableArray *tmpDataArray = [strongSelf.dataArray mutableCopy];
+            [tmpDataArray removeObjectAtIndex:deleteIndexPath.row];
+            strongSelf.dataArray = [tmpDataArray copy];
+            // 删除cell
+            [strongSelf.tableView deleteRowsAtIndexPaths:@[deleteIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }];
 }
 
 @end
