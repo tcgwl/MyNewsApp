@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ '我的'页面
+ */
 @interface GTMineViewController : UIViewController
 
 @end

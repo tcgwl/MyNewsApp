@@ -12,6 +12,9 @@
 #import "GTListLoader.h"
 #import "GTListItem.h"
 #import "GTMediator.h"
+#import "GTSearchBar.h"
+#import "GTScreen.h"
+#import "GTCommentManager.h"
 
 @interface GTNewsViewController () <UITableViewDataSource, UITableViewDelegate, GTNormalTableViewCellDelegate>
 
@@ -48,6 +51,21 @@
         strongSelf.dataArray = dataArray;
         [strongSelf.tableView reloadData];
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    [self.tabBarController.navigationItem setTitleView:({
+        GTSearchBar *searchBar = [[GTSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+        searchBar;
+        
+//        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - UI(20), self.navigationController.navigationBar.bounds.size.height)];
+//        [button setTitle:@"显示评论" forState:UIControlStateNormal];
+//        button.backgroundColor = [UIColor lightGrayColor];
+//        [button addTarget:self action:@selector(_showCommentView) forControlEvents:UIControlEventTouchUpInside];
+//        button;
+    })];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -89,7 +107,7 @@
     [self.navigationController pushViewController:detailController animated:YES];
     
     // 标记已读
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:listItem.uniqueKey];
+//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:listItem.uniqueKey];
 }
 
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
@@ -111,6 +129,12 @@
             [strongSelf.tableView deleteRowsAtIndexPaths:@[deleteIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
     }];
+}
+
+#pragma mark - private
+
+- (void)_showCommentView {
+    [[GTCommentManager sharedCommentManager] showCommentView];
 }
 
 @end

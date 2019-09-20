@@ -40,6 +40,10 @@
     return YES;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 #pragma mark - public method
 
 - (void)configWithDictionary:(NSDictionary *)dictionary {
@@ -51,6 +55,24 @@
     self.date = [dictionary objectForKey:@"date"];
     self.authorName = [dictionary objectForKey:@"author_name"];
     self.articleUrl = [dictionary objectForKey:@"url"];
+}
+
+#pragma mark - IGListDiffable
+
+- (id<NSObject>)diffIdentifier {
+    return _uniqueKey;
+}
+
+- (BOOL)isEqualToDiffableObject:(id<IGListDiffable>)object {
+    if (self == object) {
+        return YES;
+    }
+    
+    if (![((NSObject *) object) isKindOfClass:[GTListItem class]]) {
+        return NO;
+    }
+    
+    return [_uniqueKey isEqualToString:((GTListItem *) object).uniqueKey];
 }
 
 @end

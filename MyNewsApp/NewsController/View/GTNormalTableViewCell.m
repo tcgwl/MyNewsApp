@@ -76,12 +76,12 @@
 }
 
 - (void)layoutTableViewCellWithItem:(GTListItem *)item {
-    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniqueKey];
-    if (hasRead) {
-        self.titleLabel.textColor = [UIColor lightGrayColor];
-    } else {
-        self.titleLabel.textColor = [UIColor blackColor];
-    }
+//    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniqueKey];
+//    if (hasRead) {
+//        self.titleLabel.textColor = [UIColor lightGrayColor];
+//    } else {
+//        self.titleLabel.textColor = [UIColor blackColor];
+//    }
     
     self.titleLabel.text = item.title;
     

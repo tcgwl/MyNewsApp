@@ -7,8 +7,15 @@
 //
 
 #import "GTRecommendViewController.h"
+#import "GTRecommendSectionController.h"
+#import "GTListLoader.h"
 
-@interface GTRecommendViewController () <UIScrollViewDelegate>
+@interface GTRecommendViewController () <UIScrollViewDelegate,UIGestureRecognizerDelegate,IGListAdapterDataSource>
+
+@property(nonatomic, strong, readwrite) UICollectionView *collectionView;
+@property(nonatomic, strong, readwrite) IGListAdapter *listAdapter;
+@property(nonatomic, strong, readwrite) GTListLoader *listLoader;
+@property(nonatomic, strong, readwrite) NSArray *dataArray;
 
 @end
 
@@ -26,9 +33,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.listLoader = [[GTListLoader alloc] init];
+    [self.view addSubview:({
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView;
+    })];
+    
+    _listAdapter = [[IGListAdapter alloc] initWithUpdater:[IGListAdapterUpdater new] viewController:self workingRangeSize:0];
+    _listAdapter.dataSource = self;
+    _listAdapter.scrollViewDelegate = self;
+    _listAdapter.collectionView = _collectionView;
+    
+    __weak typeof(self)weakSelf = self;
+    [self.listLoader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
+        __strong typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.dataArray = dataArray;
+        [strongSelf.listAdapter reloadDataWithCompletion:^(BOOL finished) {
+            
+        }];
+    }];
+}
+
+#pragma mark - IGListAdapterDataSource
+
+- (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
+    return self.dataArray;
+}
+
+- (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
+    return [GTRecommendSectionController new];
+}
+
+- (nullable UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
+    return nil;
+}
+
+#pragma mark - UISCROLLVIEW TEST
+
+- (void)_testScrollView {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.backgroundColor = [UIColor lightGrayColor];
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 5, self.view.bounds.size.height);
@@ -52,13 +97,10 @@
     [self.view addSubview:scrollView];
 }
 
-- (void)viewClick {
-    NSLog(@"---viewClick---");
-    NSURL *urlScheme = [NSURL URLWithString:@"docinbookipad://"];
-    __unused BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:urlScheme];
-    [[UIApplication sharedApplication] openURL:urlScheme options:nil completionHandler:^(BOOL success) {
-        NSLog(@"");
-    }];
+#pragma mark - UISCROLLVIEW DELEGATE
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -79,6 +121,17 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSLog(@"---scrollViewDidEndDecelerating---");
+}
+
+#pragma mark - SCHEME TEST
+
+- (void)viewClick {
+    NSLog(@"---viewClick---");
+    NSURL *urlScheme = [NSURL URLWithString:@"docinbookipad://"];
+    __unused BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:urlScheme];
+    [[UIApplication sharedApplication] openURL:urlScheme options:@{} completionHandler:^(BOOL success) {
+        NSLog(@"SCHEME TEST");
+    }];
 }
 
 @end

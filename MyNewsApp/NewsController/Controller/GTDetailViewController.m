@@ -9,6 +9,7 @@
 #import "GTDetailViewController.h"
 #import <WebKit/WebKit.h>
 #import "GTScreen.h"
+#import "GTLogin.h"
 
 @interface GTDetailViewController () <WKNavigationDelegate>
 
@@ -49,6 +50,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(_shareArticle)];
+    
     [self.view addSubview:({
         self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, STATUSBAR_HEIGHT + 44, SCREEN_WIDTH, SCREEN_HEIGHT - STATUSBAR_HEIGHT - 44)];
         self.webView.navigationDelegate = self;
@@ -77,8 +80,15 @@
     self.progressView.progress = self.webView.estimatedProgress;
 }
 
+#pragma mark - 组件化 protocol class
+
 - (__kindof UIViewController *)detailViewControllerWithUrl:(NSString *)detailUrl {
     return [[[self class] alloc] initWithUrl:detailUrl];
+}
+
+#pragma mark - 分享
+- (void)_shareArticle {
+    [[GTLogin sharedLogin] shareToQQWithArticleUrl:[NSURL URLWithString:self.articleUrl]];
 }
 
 @end

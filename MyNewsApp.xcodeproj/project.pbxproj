@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE120C312332210700BCDB3F /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE120C302332210700BCDB3F /* TencentOpenAPI.framework */; };
+		DE120C342332214B00BCDB3F /* GTLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = DE120C332332214B00BCDB3F /* GTLogin.m */; };
 		DE1BB6972322451800A7D0AD /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1BB6962322451800A7D0AD /* GTDetailViewController.m */; };
 		DE1BB69A232259B100A7D0AD /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1BB699232259B100A7D0AD /* GTDeleteCellView.m */; };
+		DE2A4C7F233474A600F566AF /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2A4C7E233474A600F566AF /* ICONBLACK.png */; };
+		DE2A4C862334A59500F566AF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2A4C852334A59500F566AF /* NotificationCenter.framework */; };
+		DE2A4C8A2334A59500F566AF /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A4C892334A59500F566AF /* TodayViewController.m */; };
+		DE2A4C912334A59500F566AF /* GTMyToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE2A4C842334A59400F566AF /* GTMyToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE2A4C982334A79200F566AF /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE120C302332210700BCDB3F /* TencentOpenAPI.framework */; };
+		DE2A4C9B2334AD3200F566AF /* GTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A4C9A2334AD3200F566AF /* GTSearchBar.m */; };
 		DE2E8CB92320EC7E00102219 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2E8CB82320EC7E00102219 /* AppDelegate.m */; };
 		DE2E8CC12320EC8000102219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2E8CC02320EC8000102219 /* Assets.xcassets */; };
 		DE2E8CC72320EC8000102219 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2E8CC62320EC8000102219 /* main.m */; };
@@ -18,6 +26,10 @@
 		DE2E8CD82320F4D300102219 /* GTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2E8CD72320F4D300102219 /* GTMineViewController.m */; };
 		DE2E8CDA2320F80300102219 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE2E8CD92320F80300102219 /* icon.bundle */; };
 		DE2E8CDD2320FEAA00102219 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2E8CDC2320FEAA00102219 /* GTListItem.m */; };
+		DE4469922334B51B0094F030 /* GTCommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4469912334B51B0094F030 /* GTCommentManager.m */; };
+		DE4469952334C0A00094F030 /* GTRecommendSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4469942334C0A00094F030 /* GTRecommendSectionController.m */; };
+		DE55ECF52333751D00E8FDCE /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE55ECF42333751C00E8FDCE /* GTLocation.m */; };
+		DE55ECF82333804100E8FDCE /* GTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DE55ECF72333804100E8FDCE /* GTNotification.m */; };
 		DE7389D52328BE360020D7F6 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7389D42328BE360020D7F6 /* GTVideoPlayer.m */; };
 		DE7389D92328C7610020D7F6 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7389D82328C7610020D7F6 /* GTVideoCoverView.m */; };
 		DE7389DC2328C7E70020D7F6 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7389DB2328C7E70020D7F6 /* GTVideoToolbar.m */; };
@@ -29,14 +41,50 @@
 		F236C82173C103CBC16793BA /* libPods-MyNewsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE2A4C8F2334A59500F566AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE2E8CAC2320EC7E00102219 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE2A4C832334A59400F566AF;
+			remoteInfo = GTMyToday;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE2A4C952334A59500F566AF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE2A4C912334A59500F566AF /* GTMyToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		57696994E2A5718B639B429C /* Pods-MyNewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewsApp.release.xcconfig"; path = "Target Support Files/Pods-MyNewsApp/Pods-MyNewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		BDF9EAE7B349111DBA929285 /* Pods-MyNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewsApp.debug.xcconfig"; path = "Target Support Files/Pods-MyNewsApp/Pods-MyNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyNewsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE120C302332210700BCDB3F /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		DE120C322332214B00BCDB3F /* GTLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLogin.h; sourceTree = "<group>"; };
+		DE120C332332214B00BCDB3F /* GTLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLogin.m; sourceTree = "<group>"; };
 		DE1BB6952322451800A7D0AD /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		DE1BB6962322451800A7D0AD /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		DE1BB698232259B100A7D0AD /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
 		DE1BB699232259B100A7D0AD /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
+		DE2A4C7C23346C6200F566AF /* MyNewsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyNewsApp.entitlements; sourceTree = "<group>"; };
+		DE2A4C7E233474A600F566AF /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
+		DE2A4C842334A59400F566AF /* GTMyToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GTMyToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2A4C852334A59500F566AF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		DE2A4C882334A59500F566AF /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		DE2A4C892334A59500F566AF /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		DE2A4C8E2334A59500F566AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE2A4C992334AD3200F566AF /* GTSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSearchBar.h; sourceTree = "<group>"; };
+		DE2A4C9A2334AD3200F566AF /* GTSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSearchBar.m; sourceTree = "<group>"; };
 		DE2E8CB42320EC7E00102219 /* MyNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2E8CB72320EC7E00102219 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE2E8CB82320EC7E00102219 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +102,14 @@
 		DE2E8CD92320F80300102219 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		DE2E8CDB2320FEAA00102219 /* GTListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItem.h; sourceTree = "<group>"; };
 		DE2E8CDC2320FEAA00102219 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
+		DE4469902334B51B0094F030 /* GTCommentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCommentManager.h; sourceTree = "<group>"; };
+		DE4469912334B51B0094F030 /* GTCommentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCommentManager.m; sourceTree = "<group>"; };
+		DE4469932334C0A00094F030 /* GTRecommendSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendSectionController.h; sourceTree = "<group>"; };
+		DE4469942334C0A00094F030 /* GTRecommendSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendSectionController.m; sourceTree = "<group>"; };
+		DE55ECF32333751C00E8FDCE /* GTLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLocation.h; sourceTree = "<group>"; };
+		DE55ECF42333751C00E8FDCE /* GTLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLocation.m; sourceTree = "<group>"; };
+		DE55ECF62333804100E8FDCE /* GTNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNotification.h; sourceTree = "<group>"; };
+		DE55ECF72333804100E8FDCE /* GTNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNotification.m; sourceTree = "<group>"; };
 		DE7389D32328BE360020D7F6 /* GTVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoPlayer.h; sourceTree = "<group>"; };
 		DE7389D42328BE360020D7F6 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		DE7389D72328C7610020D7F6 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
@@ -73,11 +129,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE2A4C812334A59400F566AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE2A4C862334A59500F566AF /* NotificationCenter.framework in Frameworks */,
+				DE2A4C982334A79200F566AF /* TencentOpenAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE2E8CB12320EC7E00102219 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F236C82173C103CBC16793BA /* libPods-MyNewsApp.a in Frameworks */,
+				DE120C312332210700BCDB3F /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,14 +163,42 @@
 			isa = PBXGroup;
 			children = (
 				D999FC13C7182FDB421111E8 /* libPods-MyNewsApp.a */,
+				DE2A4C852334A59500F566AF /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE120C2F233220D800BCDB3F /* GTFramework */ = {
+			isa = PBXGroup;
+			children = (
+				DE120C302332210700BCDB3F /* TencentOpenAPI.framework */,
+			);
+			path = GTFramework;
+			sourceTree = "<group>";
+		};
+		DE2A4C7D2334747900F566AF /* AlternateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				DE2A4C7E233474A600F566AF /* ICONBLACK.png */,
+			);
+			path = AlternateIcons;
+			sourceTree = "<group>";
+		};
+		DE2A4C872334A59500F566AF /* GTMyToday */ = {
+			isa = PBXGroup;
+			children = (
+				DE2A4C882334A59500F566AF /* TodayViewController.h */,
+				DE2A4C892334A59500F566AF /* TodayViewController.m */,
+				DE2A4C8E2334A59500F566AF /* Info.plist */,
+			);
+			path = GTMyToday;
 			sourceTree = "<group>";
 		};
 		DE2E8CAB2320EC7E00102219 = {
 			isa = PBXGroup;
 			children = (
 				DE2E8CB62320EC7E00102219 /* MyNewsApp */,
+				DE2A4C872334A59500F566AF /* GTMyToday */,
 				DE2E8CB52320EC7E00102219 /* Products */,
 				25FF061FC154BEEA76B1D8E7 /* Pods */,
 				CD7C2FB7608E9B9D9A5CEF28 /* Frameworks */,
@@ -115,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				DE2E8CB42320EC7E00102219 /* MyNewsApp.app */,
+				DE2A4C842334A59400F566AF /* GTMyToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +217,9 @@
 		DE2E8CB62320EC7E00102219 /* MyNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE2A4C7D2334747900F566AF /* AlternateIcons */,
+				DE2A4C7C23346C6200F566AF /* MyNewsApp.entitlements */,
+				DE120C2F233220D800BCDB3F /* GTFramework */,
 				DEC6AD872329E808002BDAE9 /* Utils */,
 				EDF3DFA7232354890068B441 /* MineController */,
 				EDF3DFA6232354750068B441 /* RecommendController */,
@@ -157,6 +255,12 @@
 				DE8E6DB9232F8F020073C3D8 /* GTSplashView.m */,
 				DEFCA1652330BDB50024372A /* GTMediator.h */,
 				DEFCA1662330BDB50024372A /* GTMediator.m */,
+				DE120C322332214B00BCDB3F /* GTLogin.h */,
+				DE120C332332214B00BCDB3F /* GTLogin.m */,
+				DE55ECF32333751C00E8FDCE /* GTLocation.h */,
+				DE55ECF42333751C00E8FDCE /* GTLocation.m */,
+				DE55ECF62333804100E8FDCE /* GTNotification.h */,
+				DE55ECF72333804100E8FDCE /* GTNotification.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -189,6 +293,10 @@
 				DE1BB699232259B100A7D0AD /* GTDeleteCellView.m */,
 				DE9FEC172321051B0073AFDC /* GTNormalTableViewCell.h */,
 				DE9FEC182321051B0073AFDC /* GTNormalTableViewCell.m */,
+				DE2A4C992334AD3200F566AF /* GTSearchBar.h */,
+				DE2A4C9A2334AD3200F566AF /* GTSearchBar.m */,
+				DE4469902334B51B0094F030 /* GTCommentManager.h */,
+				DE4469912334B51B0094F030 /* GTCommentManager.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +353,8 @@
 			children = (
 				DE2E8CD32320F4C300102219 /* GTRecommendViewController.h */,
 				DE2E8CD42320F4C300102219 /* GTRecommendViewController.m */,
+				DE4469932334C0A00094F030 /* GTRecommendSectionController.h */,
+				DE4469942334C0A00094F030 /* GTRecommendSectionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +371,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DE2A4C832334A59400F566AF /* GTMyToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE2A4C922334A59500F566AF /* Build configuration list for PBXNativeTarget "GTMyToday" */;
+			buildPhases = (
+				DE2A4C802334A59400F566AF /* Sources */,
+				DE2A4C812334A59400F566AF /* Frameworks */,
+				DE2A4C822334A59400F566AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GTMyToday;
+			productName = GTMyToday;
+			productReference = DE2A4C842334A59400F566AF /* GTMyToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DE2E8CB32320EC7E00102219 /* MyNewsApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE2E8CCA2320EC8000102219 /* Build configuration list for PBXNativeTarget "MyNewsApp" */;
@@ -269,10 +396,12 @@
 				DE2E8CB02320EC7E00102219 /* Sources */,
 				DE2E8CB12320EC7E00102219 /* Frameworks */,
 				DE2E8CB22320EC7E00102219 /* Resources */,
+				DE2A4C952334A59500F566AF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DE2A4C902334A59500F566AF /* PBXTargetDependency */,
 			);
 			name = MyNewsApp;
 			productName = MyNewsApp;
@@ -288,8 +417,16 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = rainHou;
 				TargetAttributes = {
+					DE2A4C832334A59400F566AF = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					DE2E8CB32320EC7E00102219 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -307,17 +444,26 @@
 			projectRoot = "";
 			targets = (
 				DE2E8CB32320EC7E00102219 /* MyNewsApp */,
+				DE2A4C832334A59400F566AF /* GTMyToday */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE2A4C822334A59400F566AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE2E8CB22320EC7E00102219 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DE2E8CC12320EC8000102219 /* Assets.xcassets in Resources */,
 				DE2E8CDA2320F80300102219 /* icon.bundle in Resources */,
+				DE2A4C7F233474A600F566AF /* ICONBLACK.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +495,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE2A4C802334A59400F566AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE2A4C8A2334A59500F566AF /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE2E8CB02320EC7E00102219 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,12 +513,18 @@
 				DE2E8CD22320F4A900102219 /* GTVideoViewController.m in Sources */,
 				DE2E8CD52320F4C300102219 /* GTRecommendViewController.m in Sources */,
 				DE7389D92328C7610020D7F6 /* GTVideoCoverView.m in Sources */,
+				DE55ECF52333751D00E8FDCE /* GTLocation.m in Sources */,
+				DE4469952334C0A00094F030 /* GTRecommendSectionController.m in Sources */,
 				DEFCA1672330BDB50024372A /* GTMediator.m in Sources */,
 				DE2E8CDD2320FEAA00102219 /* GTListItem.m in Sources */,
+				DE120C342332214B00BCDB3F /* GTLogin.m in Sources */,
 				DE1BB6972322451800A7D0AD /* GTDetailViewController.m in Sources */,
 				EDF3DFAD2323555D0068B441 /* GTListLoader.m in Sources */,
 				DE9FEC192321051B0073AFDC /* GTNormalTableViewCell.m in Sources */,
+				DE55ECF82333804100E8FDCE /* GTNotification.m in Sources */,
 				DE8E6DBA232F8F020073C3D8 /* GTSplashView.m in Sources */,
+				DE2A4C9B2334AD3200F566AF /* GTSearchBar.m in Sources */,
+				DE4469922334B51B0094F030 /* GTCommentManager.m in Sources */,
 				DE7389DC2328C7E70020D7F6 /* GTVideoToolbar.m in Sources */,
 				DE2E8CC72320EC8000102219 /* main.m in Sources */,
 				DE1BB69A232259B100A7D0AD /* GTDeleteCellView.m in Sources */,
@@ -375,7 +535,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DE2A4C902334A59500F566AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE2A4C832334A59400F566AF /* GTMyToday */;
+			targetProxy = DE2A4C8F2334A59500F566AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		DE2A4C932334A59500F566AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyNewsApp/GTFramework",
+				);
+				INFOPLIST_FILE = GTMyToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainhou.MyNewsApp.GTMyToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE2A4C942334A59500F566AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyNewsApp/GTFramework",
+				);
+				INFOPLIST_FILE = GTMyToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainhou.MyNewsApp.GTMyToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DE2E8CC82320EC8000102219 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,6 +707,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyNewsApp/GTFramework",
+				);
 				INFOPLIST_FILE = MyNewsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,6 +730,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyNewsApp/GTFramework",
+				);
 				INFOPLIST_FILE = MyNewsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,6 +749,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE2A4C922334A59500F566AF /* Build configuration list for PBXNativeTarget "GTMyToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE2A4C932334A59500F566AF /* Debug */,
+				DE2A4C942334A59500F566AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DE2E8CAF2320EC7E00102219 /* Build configuration list for PBXProject "MyNewsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
