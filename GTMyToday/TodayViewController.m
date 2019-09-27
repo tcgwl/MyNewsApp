@@ -26,6 +26,12 @@
         [button addTarget:self action:@selector(_openSampleApp) forControlEvents:UIControlEventTouchUpInside];
         button;
     })];
+    
+    // Extension 共享数据
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.rainhou.MyNewsApp"];
+//    [userDefaults setObject:@"从0开发一款iOS App" forKey:@"title"];
+    NSString *shareTitle = [userDefaults objectForKey:@"title"];
+    NSLog(@"共享数据：%@", shareTitle);
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {

@@ -54,6 +54,10 @@
     // 推送
     [[GTNotification sharedNotification] checkNotificationAuthorization];
     
+    // Extension 共享数据
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.rainhou.MyNewsApp"];
+    [userDefaults setObject:@"从0开发一款iOS App" forKey:@"title"];
+    
     return YES;
 }
 
